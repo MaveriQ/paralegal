@@ -1,0 +1,4 @@
+langchain
+streamlit
+qdrant_client
+huggingface_hub
