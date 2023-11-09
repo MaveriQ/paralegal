@@ -1,0 +1,33 @@
+api-version: 2019-12-01
+location: eastus
+name: paralegal
+properties:
+  containers:
+  - name: paralegalapp
+    properties:
+      image: paralegalreg.azurecr.io/paralegal:v1
+      ports:
+      - port: 80
+        protocol: TCP
+      - port: 443
+        protocol: TCP
+      resources:
+        requests:
+          cpu: 2.0
+          memoryInGB: 1.5
+  imageRegistryCredentials:
+  - server: paralegalreg.azurecr.io
+    username: paralegalreg
+    password: XPoMNNpKorVlR7no/Y7dE+KepIlQmypL+Bnf8sisCl+ACRB/f+Ky
+  restartPolicy: Never
+  ipAddress:
+    ports:
+    - port: 443
+      protocol: TCP
+    - port: 80
+      protocol: TCP
+    type: Public
+    dnsNameLabel: paralegalapp
+  osType: Linux
+tags: null
+type: Microsoft.ContainerInstance/containerGroups
