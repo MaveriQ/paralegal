@@ -13,7 +13,7 @@ QD_TOKEN = os.getenv("QD_API_KEY")
 QD_URL = os.getenv("QD_URL")
 
 with st.sidebar:
-    llm_model = st.selectbox("Choose LLM from the list",options=["HuggingFaceH4/zephyr-7b-alpha","HuggingFaceH4/zephyr-7b-beta", "gpt2"])#,"meta-llama/Llama-2-7b-hf","meta-llama/Llama-2-13b-hf"])
+    llm_model = st.selectbox("Choose LLM from the list",options=["HuggingFaceH4/zephyr-7b-beta","HuggingFaceH4/zephyr-7b-alpha"])#,"meta-llama/Llama-2-7b-hf","meta-llama/Llama-2-13b-hf"])
     embedding_model = st.selectbox("Choose Embedder from the list",options=["BAAI/bge-large-en-v1.5"])#,"hkunlp/instructor-large"])
     temperature = st.slider("Temperature", min_value=0.0, max_value=1.0, step=0.2, value=1.0)
     max_new_tokens = st.slider("Max New Tokens", min_value=50, max_value=1000, step=50, value=300)
